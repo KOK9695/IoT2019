@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Entities build="b2013" majorVersion="8" minorVersion="4" modelPersistenceProviderPackage="H2PersistenceProviderPackage" revision="0" schemaVersion="1040" universal=""><StyleDefinitions/><Networks/><PersistenceProviderPackages/><Mashups><Mashup aspect.isFlex="true" aspect.isResponsive="true" aspect.mashupType="mashup" columns="0.0" description="" documentationContent="" homeMashup="" lastModifiedDate="2019-11-19T11:45:07.348+01:00" name="AutoView" projectName="Pomocnik2" rows="0.0" tags="Auto:AutoTag"><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><ParameterDefinitions/><Things/><ThingShapes/><ThingTemplates><ThingTemplate>AutoTemplate</ThingTemplate></ThingTemplates><mashupContent><![CDATA[{
+  "CustomMashupCss" : "",
+  "Data" : {
+    "DynamicThingTemplates_AutoTemplate" : {
+      "DataName" : "DynamicThingTemplates_AutoTemplate",
+      "EntityName" : "AutoTemplate",
+      "EntityType" : "DynamicThingTemplates",
+      "Id" : "81e1e1fb-3bf8-4b72-877a-679e97fcc99e",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "2b805d7d-5162-4826-88f8-2bd41c9e6ab0",
+        "Name" : "AddParameters",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "AddParameters"
+      }, {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "c7d3c284-6c82-4c2a-afa3-13397f113e0a",
+        "Name" : "getResult",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "getResult"
+      } ]
+    },
+    "Session" : {
+      "DataName" : "Session",
+      "EntityName" : "",
+      "EntityType" : "Session",
+      "Id" : "session",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "SessionInterface",
+        "Name" : "GetGlobalSessionValues",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "GetGlobalSessionValues"
+      } ]
+    },
+    "ThingTemplates_AutoTemplate" : {
+      "DataName" : "ThingTemplates_AutoTemplate",
+      "EntityName" : "AutoTemplate",
+      "EntityType" : "ThingTemplates",
+      "Id" : "b12edaa0-3067-4414-a9e4-eca915128aa6",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "b1fdd6ba-2d70-4aeb-8c99-0fbbf479186c",
+        "Name" : "GetImplementingThings",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "GetImplementingThings"
+      } ]
+    },
+    "UserExtensions" : {
+      "DataName" : "UserExtensions",
+      "EntityName" : "",
+      "EntityType" : "UserExtensions",
+      "Id" : "UserExtensions",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "UserExtensionInterface",
+        "Name" : "GetCurrentUserExtensionProperties",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "GetCurrentUserExtensionProperties"
+      } ]
+    }
+  },
+  "DataBindings" : [ {
+    "Id" : "4bb17f6e-d0f3-4543-8fe7-7be78afa1ea5",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "",
+      "SourcePropertyBaseType" : "INFOTABLE",
+      "SourcePropertyType" : "InfoTable",
+      "TargetProperty" : "Data",
+      "TargetPropertyBaseType" : "INFOTABLE",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetImplementingThings",
+    "SourceSection" : "ThingTemplates_AutoTemplate",
+    "TargetArea" : "UI",
+    "TargetId" : "dhxlist-20",
+    "TargetSection" : ""
+  }, {
+    "Id" : "70f7dc76-b8b8-4055-b8a7-11c0efb743a0",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "name",
+      "SourcePropertyBaseType" : "STRING",
+      "TargetProperty" : "value",
+      "TargetPropertyBaseType" : "THINGNAME",
+      "TargetPropertyType" : "Entity"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "SelectedRows",
+    "SourceId" : "GetImplementingThings",
+    "SourceSection" : "ThingTemplates_AutoTemplate",
+    "TargetArea" : "Data",
+    "TargetId" : "EntityName",
+    "TargetSection" : "DynamicThingTemplates_AutoTemplate"
+  }, {
+    "Id" : "96b42708-2a3d-4cf7-9457-6c85dd49abeb",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "State",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "TargetProperty" : "isUsed",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "Parameter"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "checkbox-25",
+    "SourceSection" : "",
+    "TargetArea" : "Data",
+    "TargetId" : "AddParameters",
+    "TargetSection" : "DynamicThingTemplates_AutoTemplate"
+  }, {
+    "Id" : "8604ecb3-e009-413a-a52b-a2f4a8cd8c58",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Text",
+      "SourcePropertyBaseType" : "STRING",
+      "TargetProperty" : "model",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "Parameter"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "textbox-21",
+    "SourceSection" : "",
+    "TargetArea" : "Data",
+    "TargetId" : "AddParameters",
+    "TargetSection" : "DynamicThingTemplates_AutoTemplate"
+  }, {
+    "Id" : "92fc6d0c-65e8-4192-8ef2-4ca60b318b8a",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Text",
+      "SourcePropertyBaseType" : "STRING",
+      "TargetProperty" : "user",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "Parameter"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "textbox-22",
+    "SourceSection" : "",
+    "TargetArea" : "Data",
+    "TargetId" : "AddParameters",
+    "TargetSection" : "DynamicThingTemplates_AutoTemplate"
+  }, {
+    "Id" : "3b913a38-ebdd-42f6-b60f-986b5a9e5ef1",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Text",
+      "SourcePropertyBaseType" : "STRING",
+      "TargetProperty" : "speed",
+      "TargetPropertyBaseType" : "NUMBER",
+      "TargetPropertyType" : "Parameter"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "textbox-23",
+    "SourceSection" : "",
+    "TargetArea" : "Data",
+    "TargetId" : "AddParameters",
+    "TargetSection" : "DynamicThingTemplates_AutoTemplate"
+  } ],
+  "DesignTimePermissions" : {
+    "Create" : [ ],
+    "Delete" : [ ],
+    "Metadata" : [ ],
+    "Read" : [ ],
+    "Update" : [ ]
+  },
+  "Events" : [ {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "ThingTemplates_AutoTemplate",
+    "EventHandlerService" : "GetImplementingThings",
+    "EventTriggerArea" : "Mashup",
+    "EventTriggerEvent" : "Loaded",
+    "EventTriggerId" : "mashup-root",
+    "EventTriggerSection" : "",
+    "Id" : "2e5d2a9c-49f9-4d26-b7f1-4e6d3d7588d1"
+  }, {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "DynamicThingTemplates_AutoTemplate",
+    "EventHandlerService" : "getResult",
+    "EventTriggerArea" : "Data",
+    "EventTriggerEvent" : "ServiceInvokeCompleted",
+    "EventTriggerId" : "GetImplementingThings",
+    "EventTriggerSection" : "ThingTemplates_AutoTemplate",
+    "Id" : "1a305431-f10e-41a6-9a19-035a7a0070f4"
+  }, {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "DynamicThingTemplates_AutoTemplate",
+    "EventHandlerService" : "getResult",
+    "EventTriggerArea" : "Data",
+    "EventTriggerEvent" : "SelectedRowsChanged",
+    "EventTriggerId" : "getResult",
+    "EventTriggerSection" : "DynamicThingTemplates_AutoTemplate",
+    "Id" : "6ce5fd08-d911-481e-8207-703f4a9ca807"
+  }, {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "DynamicThingTemplates_AutoTemplate",
+    "EventHandlerService" : "getResult",
+    "EventTriggerArea" : "UI",
+    "EventTriggerEvent" : "Clicked",
+    "EventTriggerId" : "button-24",
+    "EventTriggerSection" : "",
+    "Id" : "233397ff-d7fe-4664-9562-246cd8d78c68"
+  } ],
+  "RunTimePermissions" : {
+    "permissions" : [ ]
+  },
+  "UI" : {
+    "Properties" : {
+      "AddToDashboardButton" : "SimplePlus",
+      "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+      "Area" : "Mashup",
+      "BGImage" : "",
+      "BGImageRepeat" : "no-repeat",
+      "BGImageSize" : "auto",
+      "Columns" : 0,
+      "ConfigureGadgetButton" : "SimpleGear",
+      "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+      "DisplayName" : "Mashup",
+      "EnableParameterEditing" : false,
+      "Height" : 618,
+      "Id" : "mashup-root",
+      "IgnoreWarningsInViewMashup" : false,
+      "IsPrintLayout" : false,
+      "Left" : 0,
+      "MashupToEditGadget" : "DefaultMashupToEditGadget",
+      "MinHeight" : 0,
+      "MinWidth" : 0,
+      "ResponsiveLayout" : true,
+      "Rows" : 0,
+      "ShowDataLoading" : true,
+      "Style" : "DefaultMashupStyle",
+      "StyleTheme" : "Base Theme",
+      "Title" : "",
+      "TitleBar" : false,
+      "TitleBarStyle" : "DefaultTitleBarStyle",
+      "TitleBarText" : "Gadget Title Here",
+      "Top" : 0,
+      "Type" : "mashup",
+      "UseThemeForHybrids" : false,
+      "Visible" : true,
+      "Width" : 1024,
+      "Z-index" : 10,
+      "__TypeDisplayName" : "Mashup",
+      "flex-grow" : 0,
+      "id_index" : 25,
+      "supportsAutoResize" : true
+    },
+    "Widgets" : [ {
+      "Properties" : {
+        "Area" : "UI",
+        "DisplayName" : "flexcontainer-2",
+        "Id" : "flexcontainer-2",
+        "ResponsiveLayout" : true,
+        "ShowDataLoading" : true,
+        "Style" : "DefaultContainerStyle",
+        "Type" : "flexcontainer",
+        "Visible" : true,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "Responsive Container",
+        "align-content" : "flex-start",
+        "align-items" : "flex-start",
+        "flex-basis" : "auto",
+        "flex-direction" : "row",
+        "flex-grow" : 1,
+        "flex-height" : 0,
+        "flex-shrink" : 1,
+        "flex-width" : 0,
+        "flex-wrap" : "nowrap",
+        "iconClass" : "widgets-flexcontainer",
+        "isLocked" : true,
+        "justify-content" : "flex-start",
+        "userCannotRemove" : true
+      },
+      "Widgets" : [ {
+        "Properties" : {
+          "Area" : "UI",
+          "DisplayName" : "container-19",
+          "Id" : "flexcontainer-19",
+          "ResponsiveLayout" : true,
+          "ShowDataLoading" : true,
+          "Style" : "DefaultContainerStyle",
+          "Type" : "flexcontainer",
+          "Visible" : true,
+          "Z-index" : 10,
+          "__TypeDisplayName" : "Responsive Container",
+          "align-content" : "flex-start",
+          "align-items" : "flex-start",
+          "flex-basis" : "auto",
+          "flex-direction" : "row",
+          "flex-grow" : 1,
+          "flex-height" : 0,
+          "flex-shrink" : 1,
+          "flex-width" : 719,
+          "flex-wrap" : "nowrap",
+          "iconClass" : "widgets-flexcontainer-fixed",
+          "isLocked" : false,
+          "justify-content" : "flex-start",
+          "userCannotRemove" : false
+        },
+        "Widgets" : [ {
+          "Properties" : {
+            "Area" : "UI",
+            "CursorPosition" : 0,
+            "DefaultTextboxFocusStyle" : "DefaultFocusStyle",
+            "DisplayName" : "textbox-21",
+            "Height" : 24,
+            "Id" : "textbox-21",
+            "InnerShadow" : true,
+            "Label" : "",
+            "LabelAlignment" : "center",
+            "Left" : 50,
+            "Margin" : "5",
+            "MaskInputCharacters" : false,
+            "PlaceholderText" : "",
+            "ReadOnly" : false,
+            "ResponsiveLayout" : false,
+            "ShowDataLoading" : true,
+            "Style" : "DefaultTextBoxStyle",
+            "TabSequence" : 0,
+            "Text" : "",
+            "TextAlign" : "left",
+            "TextboxLabelStyle" : "DefaultWidgetLabelStyle",
+            "ToolTipField" : "",
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 20,
+            "Type" : "textbox",
+            "Visible" : true,
+            "Width" : 200,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "TextBox",
+            "__supportsLabel" : true,
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        }, {
+          "Properties" : {
+            "Area" : "UI",
+            "CursorPosition" : 0,
+            "DefaultTextboxFocusStyle" : "DefaultFocusStyle",
+            "DisplayName" : "textbox-22",
+            "Height" : 24,
+            "Id" : "textbox-22",
+            "InnerShadow" : true,
+            "Label" : "",
+            "LabelAlignment" : "left",
+            "Left" : 25,
+            "Margin" : "5",
+            "MaskInputCharacters" : false,
+            "PlaceholderText" : "",
+            "ReadOnly" : false,
+            "ResponsiveLayout" : false,
+            "ShowDataLoading" : true,
+            "Style" : "DefaultTextBoxStyle",
+            "TabSequence" : 0,
+            "Text" : "",
+            "TextAlign" : "left",
+            "TextboxLabelStyle" : "DefaultWidgetLabelStyle",
+            "ToolTipField" : "",
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 50,
+            "Type" : "textbox",
+            "Visible" : true,
+            "Width" : 200,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "TextBox",
+            "__supportsLabel" : true,
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        }, {
+          "Properties" : {
+            "Area" : "UI",
+            "CursorPosition" : 0,
+            "DefaultTextboxFocusStyle" : "DefaultFocusStyle",
+            "DisplayName" : "textbox-23",
+            "Height" : 24,
+            "Id" : "textbox-23",
+            "InnerShadow" : true,
+            "Label" : "",
+            "LabelAlignment" : "left",
+            "Left" : 85,
+            "Margin" : "5",
+            "MaskInputCharacters" : false,
+            "PlaceholderText" : "",
+            "ReadOnly" : false,
+            "ResponsiveLayout" : false,
+            "ShowDataLoading" : true,
+            "Style" : "DefaultTextBoxStyle",
+            "TabSequence" : 0,
+            "Text" : "",
+            "TextAlign" : "left",
+            "TextboxLabelStyle" : "DefaultWidgetLabelStyle",
+            "ToolTipField" : "",
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 90,
+            "Type" : "textbox",
+            "Visible" : true,
+            "Width" : 200,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "TextBox",
+            "__supportsLabel" : true,
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        }, {
+          "Properties" : {
+            "ActiveStyle" : "DefaultButtonActiveStyle",
+            "Area" : "UI",
+            "CancelConfirmationButton" : "button2",
+            "ConfirmationButton1Label" : "Yes",
+            "ConfirmationButton2Label" : "No",
+            "ConfirmationPrompt" : "Do Action?",
+            "ConfirmationRequired" : false,
+            "ConfirmationTitle" : "Confirm Action",
+            "ContextId" : "",
+            "DefaultConfirmationButton" : "button1",
+            "Disabled" : false,
+            "DisabledStyle" : "DefaultButtonDisabledStyle",
+            "DisplayName" : "button-24",
+            "FocusStyle" : "DefaultButtonFocusStyle",
+            "Height" : 30,
+            "HoverStyle" : "DefaultButtonHoverStyle",
+            "IconAlignment" : "right",
+            "Id" : "button-24",
+            "Label" : "save",
+            "Left" : 25,
+            "Margin" : "5",
+            "ResponsiveLayout" : false,
+            "RoundedCorners" : true,
+            "ShowDataLoading" : true,
+            "SingleClickSelectOnTablets" : true,
+            "Style" : "DefaultButtonStyle",
+            "TabSequence" : 0,
+            "ToolTipField" : "",
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 70,
+            "Type" : "button",
+            "Visible" : true,
+            "Width" : 75,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "Button",
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        }, {
+          "Properties" : {
+            "Area" : "UI",
+            "Disabled" : false,
+            "DisplayName" : "checkbox-25",
+            "FocusStyle" : "DefaultFocusStyle",
+            "Height" : 20,
+            "Id" : "checkbox-25",
+            "Left" : 500,
+            "Margin" : "5",
+            "Prompt" : "Check this box",
+            "ResponsiveLayout" : false,
+            "ShowDataLoading" : true,
+            "State" : false,
+            "Style" : "DefaultCheckboxStyle",
+            "TabSequence" : 0,
+            "ToolTipField" : "",
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 120,
+            "Type" : "checkbox",
+            "Visible" : true,
+            "Width" : 120,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "Checkbox",
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        } ]
+      }, {
+        "Properties" : {
+          "Area" : "UI",
+          "DisplayName" : "container-18",
+          "Id" : "flexcontainer-18",
+          "ResponsiveLayout" : true,
+          "ShowDataLoading" : true,
+          "Style" : "DefaultContainerStyle",
+          "Type" : "flexcontainer",
+          "Visible" : true,
+          "Z-index" : 10,
+          "__TypeDisplayName" : "Responsive Container",
+          "align-content" : "flex-start",
+          "align-items" : "flex-start",
+          "flex-basis" : "auto",
+          "flex-direction" : "row",
+          "flex-grow" : 1,
+          "flex-height" : 0,
+          "flex-shrink" : 1,
+          "flex-width" : 0,
+          "flex-wrap" : "nowrap",
+          "iconClass" : "widgets-flexcontainer",
+          "isLocked" : true,
+          "justify-content" : "flex-start",
+          "userCannotRemove" : false
+        },
+        "Widgets" : [ {
+          "Properties" : {
+            "Alignment" : "left",
+            "Area" : "UI",
+            "AutoSelectFirstRow" : false,
+            "ClearIfNoSelection" : false,
+            "ComboDropdownButtonStyle" : "DefaultComboDropdownButtonStyle",
+            "ComboEnableCheckbox" : false,
+            "ComboItemHighlightedStyle" : "DefaultComboItemHighlightedStyle",
+            "ComboTextboxStyle" : "DefaultComboTextboxStyle",
+            "DisableSelectedStyle" : false,
+            "DisplayName" : "dhxlist-20",
+            "DropdownButtonStyle" : "DefaultDropdownButtonStyle",
+            "DropdownSelectedStyle" : "DefaultDropdownSelectedStyle",
+            "DropdownStyle" : "DefaultDropdownStyle",
+            "EnableKeyboardSelections" : true,
+            "EnableToolTips" : true,
+            "Height" : 170,
+            "HeightOfDropdownView" : 170,
+            "Id" : "dhxlist-20",
+            "Label" : "",
+            "LabelAlignment" : "left",
+            "Left" : 100,
+            "ListBackgroundStyle" : "DefaultListBackgroundStyle",
+            "ListFocusStyle" : "DefaultFocusStyle",
+            "ListItemAlternateStyle" : "DefaultListItemAlternateStyle",
+            "ListItemHoverStyle" : "DefaultListItemHoverStyle",
+            "ListItemSelectedStyle" : "DefaultListItemSelectedStyle",
+            "ListItemStyle" : "DefaultListItemStyle",
+            "ListLabelStyle" : "DefaultWidgetLabelStyle",
+            "MultiSelect" : false,
+            "NumberOfItemsInDropdownView" : 6,
+            "NumberOfItemsPerPage" : 500,
+            "ResponsiveLayout" : true,
+            "RowHeight" : 28,
+            "ShowDataLoading" : true,
+            "SingleClickSelectOnTablets" : false,
+            "TabSequence" : -1,
+            "TextIfNoSelectionType" : "editable",
+            "TextVerticalAlignment" : 28,
+            "ToolTipStyle" : "DefaultTooltipStyle",
+            "Top" : 85,
+            "Type" : "dhxlist",
+            "ValueField" : "name",
+            "View" : "list",
+            "Visible" : true,
+            "Width" : 110,
+            "WidthOfDropdownView" : 110,
+            "Z-index" : 10,
+            "__TypeDisplayName" : "List",
+            "__supportsLabel" : true,
+            "__supportsTooltip" : true
+          },
+          "Widgets" : [ ]
+        } ]
+      } ]
+    } ]
+  },
+  "mashupType" : "mashup"
+}]]></mashupContent><preview/><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated, projectName : updated, tags : updated&#10;" timestamp="2019-11-19T11:07:23.395+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:07:52.473+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:17:24.825+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:21:28.064+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:23:26.916+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:33:27.233+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="Mashup : design : updated&#10;" timestamp="2019-11-19T11:43:56.812+01:00" user="Administrator"/></ConfigurationChanges></Mashup></Mashups><ScriptFunctionLibraries/><Projects/><Users/><DirectoryServices/><Widgets/><MediaEntities/><Groups/><PersistenceProviders/><NotificationContents/><ModelTags/><LocalizationTables/><Dashboards/><StyleThemes/><DataAnalysisDefinitions/><DataShapes><DataShape baseDataShape="" description="" documentationContent="" homeMashup="" lastModifiedDate="2019-11-19T10:55:45.019+01:00" name="AutoShape" projectName="Pomocnik2" tags="Auto:AutoTag"><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><FieldDefinitions><FieldDefinition aspect.defaultValue="false" aspect.isPrimaryKey="false" baseType="BOOLEAN" description="" name="isUsed" ordinal="3"/><FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="model" ordinal="1"/><FieldDefinition aspect.isPrimaryKey="false" aspect.maximumValue="250.0" aspect.minimumValue="0.0" baseType="NUMBER" description="" name="speed" ordinal="4"/><FieldDefinition aspect.isPrimaryKey="false" baseType="STRING" description="" name="user" ordinal="2"/></FieldDefinitions><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated, tags : updated, projectName : updated&#10;" timestamp="2019-11-19T10:54:48.555+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="fields : model : added, user : added, isUsed : added, speed : added&#10;" timestamp="2019-11-19T10:55:45.019+01:00" user="Administrator"/></ConfigurationChanges></DataShape></DataShapes><Things><Thing description="" documentationContent="" effectiveThingPackage="ConfiguredThing" enabled="true" homeMashup="" identifier="" lastModifiedDate="2019-11-19T11:06:32.020+01:00" name="Auto1" projectName="Pomocnik2" published="false" tags="Auto:AutoTag" thingTemplate="AutoTemplate" valueStream=""><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><ThingShape><PropertyDefinitions/><ServiceDefinitions/><EventDefinitions/><ServiceMappings/><ServiceImplementations/><Subscriptions/></ThingShape><PropertyBindings/><RemotePropertyBindings/><RemoteServiceBindings/><RemoteEventBindings/><AlertConfigurations/><ImplementedShapes/><ThingProperties><Speed><Value>234.0</Value><Timestamp>2019-11-19T11:04:00.902+01:00</Timestamp><Quality>GOOD</Quality></Speed><User><Value><![CDATA[Marcin]]></Value><Timestamp>2019-11-19T11:04:00.948+01:00</Timestamp><Quality>GOOD</Quality></User><Model><Value><![CDATA[toyota]]></Value><Timestamp>2019-11-19T11:04:00.948+01:00</Timestamp><Quality>GOOD</Quality></Model><IsUsed><Value>true</Value><Timestamp>2019-11-19T11:04:00.949+01:00</Timestamp><Quality>GOOD</Quality></IsUsed></ThingProperties><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated, projectName : updated, tags : updated, thingTemplate : updated&#10;" timestamp="2019-11-19T11:00:15.192+01:00" user="Administrator"/></ConfigurationChanges></Thing><Thing description="" documentationContent="" effectiveThingPackage="ConfiguredThing" enabled="true" homeMashup="" identifier="" lastModifiedDate="2019-11-19T11:00:55.047+01:00" name="Auto1Duplicate" projectName="Pomocnik2" published="false" tags="Auto:AutoTag" thingTemplate="AutoTemplate" valueStream=""><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><ThingShape><PropertyDefinitions/><ServiceDefinitions/><EventDefinitions/><ServiceMappings/><ServiceImplementations/><Subscriptions/></ThingShape><PropertyBindings/><RemotePropertyBindings/><RemoteServiceBindings/><RemoteEventBindings/><AlertConfigurations/><ImplementedShapes/><ThingProperties><Speed><Value>0.0</Value><Timestamp>1970-01-01T01:00:00.000+01:00</Timestamp><Quality>UNKNOWN</Quality></Speed><User><Value/><Timestamp>1970-01-01T01:00:00.000+01:00</Timestamp><Quality>UNKNOWN</Quality></User><Model><Value/><Timestamp>1970-01-01T01:00:00.000+01:00</Timestamp><Quality>UNKNOWN</Quality></Model><IsUsed><Value>false</Value><Timestamp>2019-11-19T11:00:55.115+01:00</Timestamp><Quality>GOOD</Quality></IsUsed></ThingProperties><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated&#10;" timestamp="2019-11-19T11:00:55.047+01:00" user="Administrator"/></ConfigurationChanges></Thing></Things><Logs/><Authenticators/><ThingPackages/><NotificationDefinitions/><ApplicationKeys/><StateDefinitions/><ThingTemplates><ThingTemplate baseThingTemplate="GenericThing" description="" documentationContent="" effectiveThingPackage="ConfiguredThing" homeMashup="" lastModifiedDate="2019-11-19T10:59:36.007+01:00" name="AutoTemplate" projectName="Pomocnik2" tags="Auto:AutoTag" thingPackage="" valueStream=""><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><PropertyBindings/><RemotePropertyBindings/><RemoteServiceBindings/><RemoteEventBindings/><AlertConfigurations><AlertDefinitions name="IsUsed"/><AlertDefinitions name="Model"/><AlertDefinitions name="Speed"/><AlertDefinitions name="User"/></AlertConfigurations><ThingShape><PropertyDefinitions><PropertyDefinition aspect.cacheTime="0.0" aspect.dataChangeType="VALUE" aspect.defaultValue="false" aspect.isPersistent="true" baseType="BOOLEAN" category="" description="" isLocalOnly="false" name="IsUsed" ordinal="5"/><PropertyDefinition aspect.cacheTime="0.0" aspect.dataChangeType="VALUE" aspect.isPersistent="true" baseType="STRING" category="" description="" isLocalOnly="false" name="Model" ordinal="2"/><PropertyDefinition aspect.cacheTime="0.0" aspect.dataChangeType="VALUE" aspect.isPersistent="true" aspect.maximumValue="250.0" aspect.minimumValue="0.0" baseType="NUMBER" category="" description="" isLocalOnly="false" name="Speed" ordinal="3"/><PropertyDefinition aspect.cacheTime="0.0" aspect.dataChangeType="VALUE" aspect.isPersistent="true" baseType="STRING" category="" description="" isLocalOnly="false" name="User" ordinal="4"/></PropertyDefinitions><ServiceDefinitions><ServiceDefinition aspect.isAsync="false" category="" description="" isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="false" name="AddParameters"><ResultType baseType="NOTHING" description="" name="result" ordinal="0"/><ParameterDefinitions><FieldDefinition aspect.defaultValue="false" baseType="BOOLEAN" description="" name="isUsed" ordinal="2"/><FieldDefinition baseType="STRING" description="" name="model" ordinal="3"/><FieldDefinition aspect.maximumValue="250.0" aspect.minimumValue="0.0" baseType="NUMBER" description="" name="speed" ordinal="1"/><FieldDefinition baseType="STRING" description="" name="user" ordinal="4"/></ParameterDefinitions></ServiceDefinition><ServiceDefinition aspect.isAsync="false" category="" description="" isAllowOverride="false" isLocalOnly="false" isOpen="false" isPrivate="false" name="getResult"><ResultType aspect.dataShape="AutoShape" baseType="INFOTABLE" description="" name="result" ordinal="0"/><ParameterDefinitions/></ServiceDefinition></ServiceDefinitions><EventDefinitions/><ServiceMappings/><ServiceImplementations><ServiceImplementation description="" handlerName="Script" name="AddParameters"><ConfigurationTables><ConfigurationTable description="" isMultiRow="false" name="Script" ordinal="0"><DataShape><FieldDefinitions><FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/></FieldDefinitions></DataShape><Rows><Row><code><![CDATA[if(speed !== undefined){
+    me.Speed = speed; 
+} 
+if(user !== undefined){ 
+    me.User = user; 
+} 
+if(model !== undefined){
+    me.Model = model; 
+} 
+
+if(isUsed !== undefined){
+    me.IsUsed = isUsed; 
+}]]></code></Row></Rows></ConfigurationTable></ConfigurationTables></ServiceImplementation><ServiceImplementation description="" handlerName="Script" name="getResult"><ConfigurationTables><ConfigurationTable description="" isMultiRow="false" name="Script" ordinal="0"><DataShape><FieldDefinitions><FieldDefinition baseType="STRING" description="code" name="code" ordinal="0"/></FieldDefinitions></DataShape><Rows><Row><code><![CDATA[var params = {
+    infoTableName : "InfoTable",
+    dataShapeName : "AutoShape"
+};
+
+// CreateInfoTableFromDataShape(infoTableName:STRING("InfoTable"), dataShapeName:STRING):INFOTABLE(AutoShape)
+var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(params);
+
+// AutoShape entry object
+var newEntry = new Object();
+newEntry.model = me.Model; // STRING
+newEntry.user = me.User; // STRING
+newEntry.isUsed = me.IsUsed; // BOOLEAN
+newEntry.speed = me.Speed; // NUMBER
+result.AddRow(newEntry);
+
+]]></code></Row></Rows></ConfigurationTable></ConfigurationTables></ServiceImplementation></ServiceImplementations><Subscriptions/></ThingShape><ImplementedShapes/><SharedConfigurationTables/><InstanceDesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></InstanceDesignTimePermissions><InstanceRunTimePermissions/><InstanceVisibilityPermissions><Visibility/></InstanceVisibilityPermissions><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated, projectName : updated, baseThingTemplate : updated&#10;" timestamp="2019-11-19T10:47:36.921+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="properties : Model : added, Speed : added, User : added, isUsed : added&#10;" timestamp="2019-11-19T10:49:28.911+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="properties : isUsed : removed, IsUsed : added&#10;" timestamp="2019-11-19T10:50:30.789+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="services : AddParameters : service added&#10;" timestamp="2019-11-19T10:52:47.417+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="services : AddParameters : service updated&#10;" timestamp="2019-11-19T10:53:21.997+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="services : AddParameters : service updated&#10;getResult : service added&#10;" timestamp="2019-11-19T10:57:36.510+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="services : getResult : service updated&#10;" timestamp="2019-11-19T10:58:28.739+01:00" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="services : getResult : service updated&#10;" timestamp="2019-11-19T10:59:31.137+01:00" user="Administrator"/></ConfigurationChanges></ThingTemplate></ThingTemplates><ExtensionPackages/><Organizations/><Menus/><Resources/><DataTags/><ThingShapes/><Subsystems/></Entities>
